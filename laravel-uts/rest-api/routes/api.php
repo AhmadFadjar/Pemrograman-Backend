@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\PatientsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,15 +39,13 @@ Route::get('/students', [StudentController::class, 'index']);
 // Method Post StudentController
 Route::post('/students', [StudentController::class, 'store']);
 
-
-// mendapatkan detail resource
-// method get
-Route::get('/students/{id}', [StudentController::class, 'show']);
-
-// mendapatkan detail student
-// method update
-Route::put('/students/{id}', [StudentController::class, 'update']);
-
-// mendapatkan detail student
-// method delete
-Route::delete('/students/{id}', [StudentController::class, 'destroy']);
+// Method PatientsController
+Route::get('/patients', [PatientsController::class, 'index']);
+// Method PatientsController by id
+Route::get('/patients/{id}', [PatientsController::class, 'show']);
+// Method PatientsController Store
+Route::post('/patients', [PatientsController::class, 'store']);
+// Method PatientsController Update
+Route::put('/patients/{id}', [PatientsController::class, 'update']);
+// Method PatientsController Destroys
+Route::delete('/patients/{id}', [PatientsController::class, 'destroy']);
